@@ -46,6 +46,17 @@ Install dependencies
     python accelerometer_server.py
 Note: Press 'Ctrl+C' in the terminal to exit.
 
+### Interactive Testing Client
+
+`interactive_client_for_testing.py` : Test client that simulates accelerometer data using keyboard input.
+
+    python interactive_client_for_testing.py
+Note: Use WASD keys to simulate accelerometer movements:
+- **W** : Simulate leg forward movement (jump)
+- **S** : Simulate leg downward movement (slide)  
+- **A** : Simulate leg left movement
+- **D** : Simulate leg right movement
+
 ## Controls
 
 ### Accelerometer Controls (3D Plane Movement)
