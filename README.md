@@ -13,7 +13,7 @@ you can use a VR headset, but we want to create an option for a cheaper alternat
 Kinect was buggy, required a lot of space, was expensive and honestly not made at the right time because the industry wasn't really moving in that direction yet. 
 
 ## game mechanics 
-To run, you need to spot jog  
+To slide, you need to spot jog  
 to jump, you need to actually jump  
 to step left , you need to jump left  
 to step right, you need to jump right 
@@ -62,8 +62,8 @@ Note: Use WASD keys to simulate accelerometer movements:
 ### Accelerometer Controls (3D Plane Movement)
 - **Move leg left** : Move left
 - **Move leg right** : Move right
-- **Move leg forward (up)** : Jump (+Y axis)
-- **Move leg downward** : Slide (-Z axis)
+- *Jump (up)** : Jump (+Y axis)
+- **Move leg backward** : Slide (-Z axis)
 
 ## 3D Plane Movement System
 
@@ -74,10 +74,10 @@ The accelerometer system uses a **3D plane** for intuitive leg-based controls:
 - **Move leg right** → Character moves right
 
 ### **Y-axis (Forward)**
-- **Move leg forward (lift up)** → Character jumps (+Y)
+- **Jump ** → Character jumps (+Y)
 
-### **Z-axis (Downward)**
-- **Move leg downward** → Character slides (-Z)
+### **Z-axis **
+- **Move leg backward** → Character slides (-Z)
 
 ## Accelerometer Setup
 
