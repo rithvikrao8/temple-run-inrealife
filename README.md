@@ -129,8 +129,4 @@ Edit `config.py` to adjust:
 
 ### Acknowledgements
 
-Taha Anwar, Training a Custom Object Detector with DLIB & Making Gesture Controlled Applications, https://learnopencv.com/training-a-custom-object-detector-with-dlib-making-gesture-controlled-applications/
-
-Nakul Lakhotia, Video Streaming in Web Browsers with OpenCV & Flask, https://towardsdatascience.com/video-streaming-in-web-browsers-with-opencv-flask-93a38846fe00
-
-Oluwaseun Ilori, Deploying Your First Opencv Flask Web Application On Heroku, https://medium.com/analytics-vidhya/deploying-your-first-opencv-flask-web-application-on-heroku-c23efcceb1e8
+Thanks to https://github.com/priyanksharma7/temple-run for the original code!!!
