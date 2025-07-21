@@ -6,11 +6,11 @@ Temple fun is temple run re-imagined into real life where I take the idea of tem
 
 
 ## why not use a VR head set
-you can use a VR headset, but we want to create an option for a cheaper alternative that still gives you the feeling of being active. Also people cannot use a VR headset for long without feeling claustro phobic.
+you can use a VR headset, but we want to create an option for a cheaper alternative that still gives you the feeling of being active. Also people cannot use a VR headset for long without feeling claustrophobic.
 
 
 ## why not Kinect?
-Kinect was buggy, required a lot of space, was expensive and honestly not made at the right time because the industry wasnt really moving in that direction yet. 
+Kinect was buggy, required a lot of space, was expensive and honestly not made at the right time because the industry wasn't really moving in that direction yet. 
 
 ## game mechanics 
 To run, you need to spot jog  
@@ -20,15 +20,13 @@ to step right, you need to jump right
 
 ***
 
-<img src="media/1.gif" width="100%">
-
 ## Prerequisites
 
 Download and install Python 3.x ([link](https://www.python.org/downloads/))
 
 Clone the repository
 
-    git clone https://github.com/priyanksharma7/temple-run.git
+    git clone https://github.com/rithvikrao8/temple-run-inrealife.git
 
 (Optional) Create and activate a virtual environment
 
@@ -37,7 +35,7 @@ Clone the repository
 
 Install dependencies
 
-    pip install opencv-contrib-python pyautogui flask pynput
+    pip install opencv-contrib-python pyautogui flask pynput numpy
 
 ## How to run
 
