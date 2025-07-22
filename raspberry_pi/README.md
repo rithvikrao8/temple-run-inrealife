@@ -180,6 +180,33 @@ The code is configured for ±2g range. For different ranges, modify the sensitiv
 3. **Keep Raspberry Pi cool** to maintain performance
 4. **Use a good power supply** (2.5A or higher recommended)
 
+## System Architecture
+
+The system architecture diagram is stored in a separate file for better maintainability:
+
+**📊 [View Architecture Diagram](architecture.mmd)**
+
+*Note: The diagram uses Mermaid syntax and can be viewed in any Mermaid-compatible viewer or rendered online at [Mermaid Live Editor](https://mermaid.live/).*
+
+### Data Flow
+
+1. **Accelerometer Reading**: MPU6050 continuously reads X, Y, Z acceleration values
+2. **Data Processing**: Raspberry Pi processes and calibrates the raw data
+3. **Network Transmission**: Data sent as JSON over UDP to server
+4. **Server Reception**: UDP server receives and parses accelerometer data
+5. **Action Determination**: Server applies threshold logic to determine game actions
+6. **Game Control**: Keyboard inputs sent to Temple Run game
+7. **Visualization**: Real-time display shows current state and actions
+
+### Control Mapping
+
+| Movement | Accelerometer Axis | Game Action | Key Press |
+|----------|-------------------|-------------|-----------|
+| Tilt Left | X < -0.3 | Move Left | ← |
+| Tilt Right | X > 0.3 | Move Right | → |
+| Leg Forward/Up | Y > 0.3 | Jump | ↑ |
+| Leg Down | Z < -0.3 | Slide | ↓ |
+
 ## Files
 
 - `accelerometer_client.py` - Main client code

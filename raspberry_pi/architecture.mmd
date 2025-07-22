@@ -1,0 +1,65 @@
+graph TB
+    subgraph "Physical Hardware"
+        RP[Raspberry Pi 2W\nwith BerryPi Accelerometer]
+        ACC[MPU6050 Accelerometer\nI2C Interface]
+    end
+    
+    subgraph "Network Layer"
+        WIFI[WiFi Network\nUDP Communication]
+    end
+    
+    subgraph "Server Side (Computer)"
+        AS[Accelerometer Server\nPython Flask App]
+        WS[Web Server\nPort 5000]
+        UDP[UDP Server\nPort 5001]
+    end
+    
+    subgraph "Game Control"
+        AI[Action Interpreter\nThreshold Logic]
+        KB[Keyboard Controller\npyautogui]
+        TR[Temple Run Game]
+    end
+    
+    subgraph "Visualization"
+        UI[Web Interface\nReal-time Display]
+        CV[Canvas Visualization\nOpenCV]
+    end
+    
+    %% Hardware connections
+    RP -->|I2C Bus\nSCL/SDA| ACC
+    ACC -->|X,Y,Z Data| RP
+    
+    %% Network connections
+    RP -->|UDP JSON Data| WIFI
+    WIFI -->|Port 5001| UDP
+    
+    %% Server internal connections
+    UDP -->|Parsed Data| AS
+    AS -->|Action Logic| AI
+    AI -->|Key Presses| KB
+    KB -->|Arrow Keys| TR
+    
+    %% Visualization connections
+    AS -->|Status Data| WS
+    WS -->|HTML/JS| UI
+    AS -->|Canvas Data| CV
+    CV -->|Video Stream| UI
+    
+    %% Styling - High contrast, readable colors
+    classDef hardware fill:#ffeb3b,stroke:#f57f17,stroke-width:3px,color:#000
+    classDef network fill:#4caf50,stroke:#2e7d32,stroke-width:3px,color:#fff
+    classDef server fill:#2196f3,stroke:#1565c0,stroke-width:3px,color:#fff
+    classDef game fill:#ff5722,stroke:#d84315,stroke-width:3px,color:#fff
+    classDef viz fill:#9c27b0,stroke:#6a1b9a,stroke-width:3px,color:#fff
+    
+    class RP hardware
+    class ACC hardware
+    class WIFI network
+    class AS server
+    class WS server
+    class UDP server
+    class AI game
+    class KB game
+    class TR game
+    class UI viz
+    class CV viz
