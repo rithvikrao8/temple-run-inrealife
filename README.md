@@ -111,6 +111,17 @@ message = json.dumps(data)
 client_socket.sendto(message.encode('utf-8'), (SERVER_IP, 5001))
 ```
 
+### 4. Raspberry Pi with BerryPi Accelerometer
+For Raspberry Pi 2W with BerryPi accelerometer card, see the `raspberry_pi/` directory:
+
+```bash
+cd raspberry_pi
+./setup.sh
+python3 accelerometer_client.py
+```
+
+See `raspberry_pi/README.md` for detailed setup instructions.
+
 ## Configuration
 
 Edit `config.py` to adjust:
