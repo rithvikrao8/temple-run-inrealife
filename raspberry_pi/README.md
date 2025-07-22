@@ -57,7 +57,7 @@ You should see the device at address `68` (MPU6050).
 
 ## Usage
 
-### Running the Accelerometer Client
+### Option 1: Manual Running (for testing)
 
 ```bash
 python3 accelerometer_client.py
@@ -67,6 +67,45 @@ The client will:
 1. **Calibrate** the accelerometer (100 samples)
 2. **Send data** to your computer at 50Hz
 3. **Display** real-time X, Y, Z values
+
+### Option 2: Install as Systemd Service (recommended for production)
+
+Install the client as a systemd service that starts on boot and auto-restarts if it crashes:
+
+```bash
+# Install the service
+sudo ./install_service.sh
+
+# Start the service immediately
+sudo systemctl start berrypi-accelerometer
+
+# Check service status
+sudo systemctl status berrypi-accelerometer
+
+# View live logs
+sudo journalctl -u berrypi-accelerometer -f
+```
+
+**Service Features:**
+- ✅ **Auto-start on boot**
+- ✅ **Auto-restart on crashes** (5-second delay)
+- ✅ **Logging to systemd journal**
+- ✅ **Runs as pi user** (no root privileges needed)
+
+**Service Management Commands:**
+```bash
+sudo systemctl start berrypi-accelerometer    # Start the service
+sudo systemctl stop berrypi-accelerometer     # Stop the service
+sudo systemctl restart berrypi-accelerometer  # Restart the service
+sudo systemctl status berrypi-accelerometer   # Check status
+sudo journalctl -u berrypi-accelerometer -f   # View live logs
+sudo journalctl -u berrypi-accelerometer      # View all logs
+```
+
+**To uninstall the service:**
+```bash
+sudo ./uninstall_service.sh
+```
 
 ### Expected Output
 
@@ -146,4 +185,6 @@ The code is configured for ±2g range. For different ranges, modify the sensitiv
 - `accelerometer_client.py` - Main client code
 - `requirements.txt` - Python dependencies
 - `setup.sh` - Automated setup script
+- `install_service.sh` - Install systemd service for auto-start/restart
+- `uninstall_service.sh` - Remove systemd service
 - `README.md` - This file 
